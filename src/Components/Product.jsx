@@ -1,7 +1,7 @@
 import  { useState } from "react";
 
-import img1 from "../assets/image1.png";
-import img2 from "../assets/image2.png";
+import img1 from "../assets/Image1.png";
+import img2 from "../assets/Image2.png";
 import img3 from "../assets/image3.png";
 
 function Product() {
