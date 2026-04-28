@@ -5,7 +5,7 @@ const baseReviews = [
   {
     id: 1,
     title: "Best Peanut Butter Ever!",
-    text: "This peanut butter is super creamy and tastes amazing.the texture is thick and crunchy which feels kinda nice. every bite is like earthy and genuine u know? even the oil separation on top feels natural like it’s not trying to be fancy. packed in a glass jar gives me good vibes... plus it’s healthy for someone like me who loves pure stuff this is a solid choice",
+    text: "This peanut butter is super creamy and tastes amazing.the texture is thick and crunchy which feels kinda nice. every bite is like earthy and genuine u know? even the oil separation on top feels natural like it’s not trying to be fancy.",
     name: "Varshith",
     purchases: 12,
     rating: 4.8
@@ -217,10 +217,11 @@ function BentoView({ reviews }) {
 }
 
 function MarqueeView({ reviews }) {
+  const marqueeData = reviews.slice(1);
   return (
     <div className="space-y-6 overflow-hidden">
       <div className="flex gap-4 animate-marquee">
-        {[...reviews, ...reviews].map((r, i) => (
+        {[...marqueeData, ...marqueeData].map((r, i) => (
           <div key={i} className="min-w-65 p-5 rounded-xl shadow bg-linear-to-br from-[#FFF8F0] to-[#EAD7C5] hover:scale-110 transition">
             <h3>🥜 {r.title}</h3>
             <p className="text-sm line-clamp-3">{r.text}</p>
@@ -230,7 +231,7 @@ function MarqueeView({ reviews }) {
       </div>
 
       <div className="flex gap-4 animate-marquee-reverse">
-        {[...reviews, ...reviews].map((r, i) => (
+        {[...marqueeData, ...marqueeData].map((r, i) => (
           <div key={i} className="min-w-65 p-5 rounded-xl shadow bg-linear-to-br from-[#EAD7C5] to-[#FFF8F0] hover:scale-110 transition">
             <h3>🥜 {r.title}</h3>
             <p className="text-sm line-clamp-3">{r.text}</p>
